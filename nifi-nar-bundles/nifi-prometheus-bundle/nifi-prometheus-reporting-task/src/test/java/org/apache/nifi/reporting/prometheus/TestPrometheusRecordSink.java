@@ -104,8 +104,10 @@ public class TestPrometheusRecordSink {
 
 
         final String content = getMetrics();
-        assertTrue(content.contains("field1{field3=\"Hello\",} 15.0\nfield1{field3=\"World!\",} 6.0\n"));
-        assertTrue(content.contains("field2{field3=\"Hello\",} 12.34567\nfield2{field3=\"World!\",} 0.12345678901234568\n"));
+        assertTrue(content.contains("field1{field3=\"Hello\",} 15.0\n"));
+        assertTrue(content.contains("field1{field3=\"World!\",} 6.0\n"));
+        assertTrue(content.contains("field2{field3=\"Hello\",} 12.34567\n"));
+        assertTrue(content.contains("field2{field3=\"World!\",} 0.12345678901234568\n"));
 
         try {
             sink.onStopped();
